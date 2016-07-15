@@ -1,8 +1,27 @@
 from fabric.decorators import with_settings
-from fabtools import require
 from fabric.colors import green
 
+from fabtools import require
+from fabtools import git
+
 @with_settings(warn_only=True)
-def deploy_code(repo_url='', app_dir='', user='', update=False):
-        print(green('Cloning github repo'))
-        require.git.working_copy(repo_url, app_dir, user=user, update=update)
+def clone_repo(repo_url='', app_dir='', user=''):
+    print(green('Cloning github repo {}'.format(repo_url)))
+    require.git.working_copy(repo_url, app_dir, user=user)
+
+@with_settings(warn_only=True)
+def deploy_code(repo_url='', app_dir='', user='', remote='', branch=''):
+
+    if '/' in branch:
+        remote=branch.split('/')[0]
+
+    print(green('Updating remote {}'.format(remote)))
+    git.fetch(app_dir, remote=remote)
+
+    print(green('Pulling branch {}'.format(branch)))
+    git.checkout(app_dir, branch=branch)
+
+@with_settings(warn_only=True)
+def add_remote(remote_url='', repo_name='', app_dir=''):
+        print(green('Adding new remote: {}'.format(repo_name)))
+        git.add_remote(app_dir, repo_name, remote_url)

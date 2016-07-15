@@ -1,13 +1,8 @@
-from fabric.api import run, env
+from fabric.api import run
 from fabric.decorators import with_settings
-from fabric.context_managers import shell_env, cd 
-from fabric.colors import red, green, yellow
-
-from fabtools import require
-from fabtools.python import virtualenv
+from fabric.colors import green, yellow
 
 from python import install_requirements
-from git import deploy_code
 
 @with_settings(warn_only=True)
 def setup_virtualenv(python_version='', app_name='', app_dir='', repo_url=''):

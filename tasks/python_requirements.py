@@ -1,7 +1,4 @@
-from fabric.api import env
-
 from fabric.decorators import with_settings
-from fabric.context_managers import shell_env, cd 
 
 from fabtools import require
 from fabtools.python import virtualenv

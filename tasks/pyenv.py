@@ -1,7 +1,7 @@
 from fabric.api import run, env
 from fabric.decorators import with_settings
 from fabric.context_managers import shell_env 
-from fabric.colors import red, green, yellow
+from fabric.colors import green
 
 
 @with_settings(warn_only=True)
