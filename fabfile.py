@@ -7,7 +7,7 @@ from fabric.context_managers import shell_env, cd
 from tasks.pyenv import install_python
 from tasks.virtualenv import setup_virtualenv
 from tasks.git import clone_repo, deploy_code, add_remote
-from tasks.python import install_requirements 
+from tasks.requirements import install_requirements
 
 from envs import staging, production
 from settings import *
@@ -33,4 +33,3 @@ def git_remote_add(remote_url, repo_name):
     with shell_env(HOME='/home/' + env.user, PATH="/home/" + env.user + "/.pyenv/bin:$PATH"):
         with cd(env.app_dir):
             add_remote(remote_url, repo_name, env.app_dir)
-
