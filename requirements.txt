@@ -1,2 +1,2 @@
 Fabric==1.11.1
-fabtools-python==0.19.2
+fabtools-python==0.19.4
