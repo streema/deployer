@@ -2,7 +2,7 @@ from fabric.api import run
 from fabric.decorators import with_settings
 from fabric.colors import green, yellow
 
-from tasks.requirements import install_requirements
+from deployer.tasks.requirements import install_requirements
 
 @with_settings(warn_only=True)
 def setup_virtualenv(python_version='', app_name='', app_dir='', repo_url=''):
