@@ -1,2 +1,6 @@
 \.*sw*
 *.py[cod]
+.python-version
+build/
+deployer.egg-info/
+dist/
