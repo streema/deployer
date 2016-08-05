@@ -21,11 +21,11 @@ Directory structure
 
 #### Add a new remote repository
 
-`fab production git_add_remote:<remoteurl>,<name>`
+`fab production git_remote_add:<remoteurl>,<name>`
 
 example:
 
-`fab production git_add_remote:git@github.com:n0n0x/deployer.git,n0n0x`
+`fab production git_remote_add:git@github.com:n0n0x/deployer.git,n0n0x`
 
 #### Deploy master branch
 `fab production deploy`
