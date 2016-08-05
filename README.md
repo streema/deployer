@@ -17,6 +17,23 @@ Directory structure
     └── virtualenv.py
 ```
 
+## Required env variables
+```
+PRODUCTION_SERVERS=ip,ip,... or STAGING_SERVERS=ip,ip,...
+APP_REPO_URL=git@github.com:streema/<project>.git
+APP_PYTHON_VERSION=<python.version>
+APP_NAME=<application name>
+```
+
+#### Example
+```
+PRODUCTION_SERVERS=127.0.0.1
+APP_REPO_URL=git@github.com:streema/deployer.git
+APP_PYTHON_VERSION=2.7
+APP_NAME=deployer
+```
+
+
 ## Commands
 
 #### Add a new remote repository
