@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os.path
+
 try:
     from setuptools import setup, find_packages
 except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages
+
+from pip.req import parse_requirements
 
 
 with open('README.md') as readme_file:
@@ -14,6 +18,9 @@ with open('README.md') as readme_file:
 test_requirements = [
     "tox", "mock", "pytest"
 ]
+
+# parse_requirements() returns generator of pip.req.InstallRequirement objects
+install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), "requirements.txt"), session=False)
 
 setup(
     name="deployer",
@@ -26,10 +33,7 @@ setup(
     packages=find_packages(exclude=['ez_setup', 'tests']),
     package_dir={'deployer': 'deployer'},
     include_package_data=True,
-    install_requires=[
-        "Fabric3>=1.11.1.post1",
-        "fabtools-python>=0.19.4"
-    ],
+    install_requires=[str(ir.req) for ir in install_reqs],
     zip_safe=False,
     keywords='{{ cookiecutter.project_slug }}',
     classifiers=[
