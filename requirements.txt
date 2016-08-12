@@ -1,2 +1,3 @@
 Fabric==1.11.1
 fabtools-python==0.19.5
+python-dotenv==0.5.1

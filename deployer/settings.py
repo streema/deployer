@@ -1,5 +1,13 @@
-from os import environ
+from os import environ, getcwd
+from os.path import join
+
 from fabric.api import env
+
+from dotenv import load_dotenv
+
+# Load .env file
+dotenv_path = join(getcwd(), '.env')
+load_dotenv(dotenv_path)
 
 # Forward SSH agent
 env.forward_agent = True
