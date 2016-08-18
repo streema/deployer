@@ -1,3 +1,4 @@
+from fabric.api import sudo
 from fabtools import service
 
 def stop(component):
@@ -15,3 +16,5 @@ def restart(component):
 def reload(component):
     service.reload(component)
 
+def upstart_reload():
+    sudo('initctl reload-configuration')
