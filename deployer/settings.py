@@ -15,7 +15,7 @@ env.forward_agent = True
 env.python_version = environ.get('APP_PYTHON_VERSION')
 
 env.app_name = environ.get('APP_NAME')
-env.app_dir = '/var/local/apps/{}'.format(environ.get('APP_NAME'))
+env.app_dir = '{}/{}'.format(environ.get('INSTALL_DIR'), environ.get('APP_NAME'))
 env.repo_url = environ.get('APP_REPO_URL')
 
 env.supervisor_services = environ.get('SUPERVISOR_SERVICES', '').split(',')

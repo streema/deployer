@@ -23,6 +23,9 @@ You must have a `.env` file with the required variables on your app's root direc
 
 # Env Variables 
 ## Required env variables
+`INSTALL_DIR=/path/to/dir`
+   Path where to setup the application. directory *MUST* exist.
+
 `PRODUCTION_SERVERS=<ip|domain>,<ip|domain>...`
    A list of IPs and/or domains of production servers
 
