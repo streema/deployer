@@ -24,7 +24,7 @@ install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), "requi
 
 setup(
     name="deployer",
-    version="1.0.1",
+    version="1.2.0",
     description="Streema deployer library",
     long_description=readme,
     author="Streema Devs",
