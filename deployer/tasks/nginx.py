@@ -17,7 +17,7 @@ def setup():
         output = run('ls')
         list_files = output.split()
         for file in list_files:
-            files.symlink('{}/{}'.format(conf_dir, file), '/etc/nginx/conf.d/', use_sudo=True)
+            files.symlink('{}/{}'.format(conf_dir, file), '/etc/nginx/sites-enabled/', use_sudo=True)
 
     restart()
 
