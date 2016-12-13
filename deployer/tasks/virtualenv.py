@@ -12,4 +12,4 @@ def setup_virtualenv(python_version='', app_name='', app_dir='', repo_url=''):
     if run("pyenv virtualenv {0} {1}-{0}".format(python_version, app_name)).failed:
         print(yellow("Virtualenv already exists"))
 
-        install_requirements(app_name, python_version)
+    install_requirements(app_name, python_version)
