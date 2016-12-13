@@ -4,13 +4,13 @@ from fabric.context_managers import shell_env, cd
 
 #output.stdout = False
 
-from tasks.pyenv import install_python
-from tasks.virtualenv import setup_virtualenv
-from tasks.git import clone_repo, deploy_code, add_remote
-from tasks.requirements import install_requirements
+from deployer.tasks.pyenv import install_python
+from deployer.tasks.virtualenv import setup_virtualenv
+from deployer.tasks.git import clone_repo, deploy_code, add_remote
+from deployer.tasks.requirements import install_requirements
 
-from envs import staging, production
-from settings import *
+from deployer.envs import staging, production
+from deployer.settings import *
 
 
 @task
