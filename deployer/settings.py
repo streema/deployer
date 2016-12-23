@@ -5,8 +5,10 @@ from fabric.api import env
 
 from dotenv import load_dotenv
 
+env.env_file = environ.get('ENV_FILE', './config/settings/.env')
+
 # Load .env file
-dotenv_path = join(getcwd(), '.env')
+dotenv_path = join(getcwd(), env.env_file)
 load_dotenv(dotenv_path)
 
 # Forward SSH agent
