@@ -27,7 +27,7 @@ def setup_environment():
             setup_virtualenv(env.python_version, env.app_name, env.app_dir, env.repo_url)
 
 @task
-def deploy(branch='master'):
+def deploy(branch='master', migrate=False):
     with shell_env(HOME='/home/' + env.user, PATH="/home/" + env.user + "/.pyenv/bin:$PATH"):
         with cd(env.app_dir):
             deploy_code(env.repo_url, env.app_dir, env.user, branch=branch)
