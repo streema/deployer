@@ -22,3 +22,4 @@ env.repo_url = environ.get('APP_REPO_URL')
 
 env.supervisor_services = environ.get('SUPERVISOR_SERVICES', '').split(',')
 env.upstart_services = environ.get('UPSTART_SERVICES', '').split(',')
+env.restart_after_deploy = environ.get('RESTART_AFTER_DEPLOY', False)
